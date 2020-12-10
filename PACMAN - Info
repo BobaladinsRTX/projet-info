@@ -1,4 +1,4 @@
-//PROGRAMME "COMPLET"
+//PROGRAMME "COMPLET" + moi qui ecrit
 //le contour
 RectanglePlein(5,5,20,120,'black');
 RectanglePlein(5,5,180,20,'black');
@@ -50,6 +50,7 @@ RectanglePlein(145,165,40,60,'black');
 RectanglePlein(205,165,40,60,'black');
 RectanglePlein(145,205,100,20,'black');
 RectanglePlein(155,175,80,40,'white');
+//petite porte bleue
 Ligne(5,185,5,205,'blue');
 Ligne(385,185,385,205,'blue');
 
@@ -60,6 +61,9 @@ Xpac=185;
 Ypac=145;
 Xfantome=25;
 Yfantome=385;
+
+
+
 var fantome=PreloadImage('https://assets.stickpng.com/images/580b57fcd9996e24bc43c31b.png');
 var pacman=PreloadImage('https://img2.freepng.fr/20180401/pwe/kisspng-pac-man-computer-icons-emoticon-smiley-clip-art-pac-man-5ac079d0d77eb1.2888210015225635368827.jpg');
 function A_Executer(){
@@ -67,7 +71,7 @@ function A_Executer(){
   DrawImageObject(fantome,Xfantome,Yfantome,20,20);
 }
 WaitPreload(A_Executer);
-
+  
 var Keys = {
         up: false,
         down: false,
@@ -85,7 +89,19 @@ window.onkeydown = function(e){
            RectanglePlein(Xpac,Ypac,20,20,'white');
            Xpac=Xpac-20;
            DrawImageObject(pacman,Xpac,Ypac,20,20);
-          //IA Fantome
+           //Les téléporteurs
+
+if (Xpac == 5&&Ypac==185){
+
+  DrawImageObject(pacman,365,185,20,20);
+  
+}
+/*if (Xpac == 5 && Ypac == 185) {
+
+  DrawImageObject(pacman,35,185,20,20);
+  
+}    */
+///IA Fantome
 Xecart=Xpac-Xfantome;
 Yecart=Ypac-Yfantome;
 if(Xecart<0&&Yecart<0){
@@ -298,7 +314,7 @@ if(Xecart==0&&Yecart!=0){
       }
       }
   }
-  else{
+  if(Yecart>0){
     //down
         if(((Xfantome==25||Xfantome==345)&&Yfantome!=105&&Yfantome!=185&&Yfantome!=305&&Yfantome!=385)||((Xfantome==45||Xfantome==325)&&Yfantome>=305&&Yfantome<345)||((Xfantome==85||Xfantome==285)&&Yfantome!=345&&Yfantome!=385)||((Xfantome==125||Xfantome==245)&&Yfantome!=25&&Yfantome!=105&&Yfantome!=265&&Yfantome!=345&&Yfantome!=385)||((Xfantome==165||Xfantome==205)&&Yfantome!=65&&Yfantome!=145&&Yfantome!=225&&Yfantome!=305&&Yfantome!=385)){
           RectanglePlein(Xfantome,Yfantome,20,20,'white');
@@ -355,7 +371,7 @@ if(Xecart!=0&&Yecart==0){
       }
     }
   }
-  else{
+  if(Xecart>0){
     //droite
     if((Yfantome==25&&(Xfantome!=165&&Xfantome!=345))||(Yfantome==65&&Xfantome!=345)||(Yfantome==105&&(Xfantome!=85&&Xfantome!=165&&Xfantome!=245&&Xfantome!=345))||(Yfantome==145&&(Xfantome!=85&&Xfantome!=245&&Xfantome!=285))||(Yfantome==185&&Xfantome!=125)||(Yfantome==225&&(Xfantome!=85&&Xfantome!=245&&Xfantome!=285))||(Yfantome==265&&(Xfantome!=165&&Xfantome!=345))||(Yfantome==305&&(Xfantome!=45&&Xfantome!=285&&Xfantome!=345))||(Yfantome==345&&(Xfantome!=85&&Xfantome!=165&&Xfantome!=245&&Xfantome!=345))||Yfantome==385&&Xfantome!=345){
       RectanglePlein(Xfantome,Yfantome,20,20,'white');
@@ -391,7 +407,7 @@ if(Xecart!=0&&Yecart==0){
           RectanglePlein(Xpac,Ypac,20,20,'white');
           Ypac=Ypac-20;
           DrawImageObject(pacman,Xpac,Ypac,20,20);
-         //IA Fantome
+         ///IA Fantome
 Xecart=Xpac-Xfantome;
 Yecart=Ypac-Yfantome;
 if(Xecart<0&&Yecart<0){
@@ -604,7 +620,7 @@ if(Xecart==0&&Yecart!=0){
       }
       }
   }
-  else{
+  if(Yecart>0){
     //down
         if(((Xfantome==25||Xfantome==345)&&Yfantome!=105&&Yfantome!=185&&Yfantome!=305&&Yfantome!=385)||((Xfantome==45||Xfantome==325)&&Yfantome>=305&&Yfantome<345)||((Xfantome==85||Xfantome==285)&&Yfantome!=345&&Yfantome!=385)||((Xfantome==125||Xfantome==245)&&Yfantome!=25&&Yfantome!=105&&Yfantome!=265&&Yfantome!=345&&Yfantome!=385)||((Xfantome==165||Xfantome==205)&&Yfantome!=65&&Yfantome!=145&&Yfantome!=225&&Yfantome!=305&&Yfantome!=385)){
           RectanglePlein(Xfantome,Yfantome,20,20,'white');
@@ -661,7 +677,7 @@ if(Xecart!=0&&Yecart==0){
       }
     }
   }
-  else{
+  if(Xecart>0){
     //droite
     if((Yfantome==25&&(Xfantome!=165&&Xfantome!=345))||(Yfantome==65&&Xfantome!=345)||(Yfantome==105&&(Xfantome!=85&&Xfantome!=165&&Xfantome!=245&&Xfantome!=345))||(Yfantome==145&&(Xfantome!=85&&Xfantome!=245&&Xfantome!=285))||(Yfantome==185&&Xfantome!=125)||(Yfantome==225&&(Xfantome!=85&&Xfantome!=245&&Xfantome!=285))||(Yfantome==265&&(Xfantome!=165&&Xfantome!=345))||(Yfantome==305&&(Xfantome!=45&&Xfantome!=285&&Xfantome!=345))||(Yfantome==345&&(Xfantome!=85&&Xfantome!=165&&Xfantome!=245&&Xfantome!=345))||Yfantome==385&&Xfantome!=345){
       RectanglePlein(Xfantome,Yfantome,20,20,'white');
@@ -689,7 +705,7 @@ if(Xecart!=0&&Yecart==0){
     }
   }
 }
-//fin IA 
+//fin IA
         }
     }
     else if (kc === 39){ Keys.right = true;
@@ -697,7 +713,7 @@ if(Xecart!=0&&Yecart==0){
           RectanglePlein(Xpac,Ypac,20,20,'white');
           Xpac=Xpac+20;
           DrawImageObject(pacman,Xpac,Ypac,20,20);
-         //IA Fantome
+         ///IA Fantome
 Xecart=Xpac-Xfantome;
 Yecart=Ypac-Yfantome;
 if(Xecart<0&&Yecart<0){
@@ -910,7 +926,7 @@ if(Xecart==0&&Yecart!=0){
       }
       }
   }
-  else{
+  if(Yecart>0){
     //down
         if(((Xfantome==25||Xfantome==345)&&Yfantome!=105&&Yfantome!=185&&Yfantome!=305&&Yfantome!=385)||((Xfantome==45||Xfantome==325)&&Yfantome>=305&&Yfantome<345)||((Xfantome==85||Xfantome==285)&&Yfantome!=345&&Yfantome!=385)||((Xfantome==125||Xfantome==245)&&Yfantome!=25&&Yfantome!=105&&Yfantome!=265&&Yfantome!=345&&Yfantome!=385)||((Xfantome==165||Xfantome==205)&&Yfantome!=65&&Yfantome!=145&&Yfantome!=225&&Yfantome!=305&&Yfantome!=385)){
           RectanglePlein(Xfantome,Yfantome,20,20,'white');
@@ -967,7 +983,7 @@ if(Xecart!=0&&Yecart==0){
       }
     }
   }
-  else{
+  if(Xecart>0){
     //droite
     if((Yfantome==25&&(Xfantome!=165&&Xfantome!=345))||(Yfantome==65&&Xfantome!=345)||(Yfantome==105&&(Xfantome!=85&&Xfantome!=165&&Xfantome!=245&&Xfantome!=345))||(Yfantome==145&&(Xfantome!=85&&Xfantome!=245&&Xfantome!=285))||(Yfantome==185&&Xfantome!=125)||(Yfantome==225&&(Xfantome!=85&&Xfantome!=245&&Xfantome!=285))||(Yfantome==265&&(Xfantome!=165&&Xfantome!=345))||(Yfantome==305&&(Xfantome!=45&&Xfantome!=285&&Xfantome!=345))||(Yfantome==345&&(Xfantome!=85&&Xfantome!=165&&Xfantome!=245&&Xfantome!=345))||Yfantome==385&&Xfantome!=345){
       RectanglePlein(Xfantome,Yfantome,20,20,'white');
@@ -1003,7 +1019,7 @@ if(Xecart!=0&&Yecart==0){
           RectanglePlein(Xpac,Ypac,20,20,'white');
           Ypac=Ypac+20;
           DrawImageObject(pacman,Xpac,Ypac,20,20);
-          //IA Fantome
+          ///IA Fantome
 Xecart=Xpac-Xfantome;
 Yecart=Ypac-Yfantome;
 if(Xecart<0&&Yecart<0){
@@ -1216,7 +1232,7 @@ if(Xecart==0&&Yecart!=0){
       }
       }
   }
-  else{
+  if(Yecart>0){
     //down
         if(((Xfantome==25||Xfantome==345)&&Yfantome!=105&&Yfantome!=185&&Yfantome!=305&&Yfantome!=385)||((Xfantome==45||Xfantome==325)&&Yfantome>=305&&Yfantome<345)||((Xfantome==85||Xfantome==285)&&Yfantome!=345&&Yfantome!=385)||((Xfantome==125||Xfantome==245)&&Yfantome!=25&&Yfantome!=105&&Yfantome!=265&&Yfantome!=345&&Yfantome!=385)||((Xfantome==165||Xfantome==205)&&Yfantome!=65&&Yfantome!=145&&Yfantome!=225&&Yfantome!=305&&Yfantome!=385)){
           RectanglePlein(Xfantome,Yfantome,20,20,'white');
@@ -1273,7 +1289,7 @@ if(Xecart!=0&&Yecart==0){
       }
     }
   }
-  else{
+  if(Xecart>0){
     //droite
     if((Yfantome==25&&(Xfantome!=165&&Xfantome!=345))||(Yfantome==65&&Xfantome!=345)||(Yfantome==105&&(Xfantome!=85&&Xfantome!=165&&Xfantome!=245&&Xfantome!=345))||(Yfantome==145&&(Xfantome!=85&&Xfantome!=245&&Xfantome!=285))||(Yfantome==185&&Xfantome!=125)||(Yfantome==225&&(Xfantome!=85&&Xfantome!=245&&Xfantome!=285))||(Yfantome==265&&(Xfantome!=165&&Xfantome!=345))||(Yfantome==305&&(Xfantome!=45&&Xfantome!=285&&Xfantome!=345))||(Yfantome==345&&(Xfantome!=85&&Xfantome!=165&&Xfantome!=245&&Xfantome!=345))||Yfantome==385&&Xfantome!=345){
       RectanglePlein(Xfantome,Yfantome,20,20,'white');
@@ -1315,17 +1331,3 @@ window.onkeyup = function(e) {
     else if (kc === 39) Keys.right = false;
     else if (kc === 40) Keys.down = false;
 };
-
-//Les téléporteurs
-
-if (Xpac == 5 && Ypac == 190) {
-
-  DrawImageObject(pacman,Xpac,Ypac,5,380);
-  
-}
-
-if (Xpac == 385 && Ypac == 205) {
-
-  DrawImageObject(pacman,Xpac,Ypac,5,190);
-  
-}
