@@ -1315,3 +1315,17 @@ window.onkeyup = function(e) {
     else if (kc === 39) Keys.right = false;
     else if (kc === 40) Keys.down = false;
 };
+
+//Les téléporteurs
+
+if (Xpac == 5 && Ypac == 190) {
+
+  DrawImageObject(pacman,Xpac,Ypac,5,380);
+  
+}
+
+if (Xpac == 385 && Ypac == 205) {
+
+  DrawImageObject(pacman,Xpac,Ypac,5,190);
+  
+}
